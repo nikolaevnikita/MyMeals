@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0cr-wd-aYA">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Мои приемы пищи-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyMealsCoreData" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="foodTime" translatesAutoresizingMaskIntoConstraints="NO" id="MvK-6E-o8U">
+                                <rect key="frame" x="0.0" y="88" width="414" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="D3x-Ug-hfq"/>
+                                </constraints>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3PE-NP-IWr">
+                                <rect key="frame" x="0.0" y="208" width="414" height="688"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="vvG-3e-cNO"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="n9r-Mt-1bs"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ser-f9-Xmw">
+                                <rect key="frame" x="20" y="179" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="3PE-NP-IWr" firstAttribute="top" secondItem="Ser-f9-Xmw" secondAttribute="bottom" constant="8" id="0Il-DC-wCn"/>
+                            <constraint firstItem="3PE-NP-IWr" firstAttribute="top" secondItem="MvK-6E-o8U" secondAttribute="bottom" id="0b3-fd-djk"/>
+                            <constraint firstAttribute="bottom" secondItem="3PE-NP-IWr" secondAttribute="bottom" id="2FS-G7-zyZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ser-f9-Xmw" secondAttribute="trailing" constant="20" id="2Xu-OE-iKw"/>
+                            <constraint firstItem="Ser-f9-Xmw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="91" id="7ZQ-av-Sri"/>
+                            <constraint firstItem="MvK-6E-o8U" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Jfa-ND-aXg"/>
+                            <constraint firstItem="3PE-NP-IWr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="M4k-iu-eSK"/>
+                            <constraint firstItem="MvK-6E-o8U" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="MLG-K7-n9D"/>
+                            <constraint firstItem="3PE-NP-IWr" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="RMT-ut-ixd"/>
+                            <constraint firstItem="Ser-f9-Xmw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="XOt-Nc-p5w"/>
+                            <constraint firstItem="MvK-6E-o8U" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="eLn-OH-u3g"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Мои приемы пищи" id="6Bp-JK-jbW">
+                        <barButtonItem key="leftBarButtonItem" image="person" catalog="system" style="done" id="wL8-MX-uTu">
+                            <connections>
+                                <action selector="changeUser:" destination="BYZ-38-t0r" id="VKA-bf-KAa"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="ZAv-67-6Ge">
+                            <connections>
+                                <action selector="addMealTime:" destination="BYZ-38-t0r" id="2Xd-Vl-zmK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="nameLabel" destination="Ser-f9-Xmw" id="zeR-kl-rYK"/>
+                        <outlet property="tableView" destination="3PE-NP-IWr" id="VII-O9-ZEA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="129.91071428571428"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7C8-3o-6We">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0cr-wd-aYA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5fX-gA-y2f">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Mjd-ly-A8O"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hFJ-Fs-p7l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="foodTime" width="929" height="335"/>
+        <image name="person" catalog="system" width="64" height="58"/>
+    </resources>
+</document>
